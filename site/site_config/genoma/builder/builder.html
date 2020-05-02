@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Title -->
+    <title>
+        Builder
+    </title>
+    <!-- Title -->
+
+    <!-- Loading -->
+    <script src="/site/site_config/meta/LOAD&BEAUTY_BODY.js"></script>
+    <!-- Loading -->
+
+    <!-- requires -->
+    <script src="/site/site_config/meta/CONFIG.js"></script>
+    <script src="/site/site_config/meta/SEO.js"></script>
+    <script src="/site/site_config/meta/BEAUTY_HEAD.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <!-- requires -->
+
+    <!-- angular controller -->
+    <script src="./builderCtrl.js"></script>
+    <!-- angular controller -->
+
+    <!-- UI -->
+    <link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <!-- UI -->
+
+    <!-- UI external -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="/site/site_config/external/grayscale/css/grayscale.min.css" rel="stylesheet">
+    <!-- UI external -->
+
+
+</head>
+
+<body ng-app="core" ng-controller="control" id="page-top" ng-cloak>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">Team</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Explorer
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#projects">Builders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#signup">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">ZERO</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">
+                    Create, development and deploy your page.
+                </h2>
+                <a href="#about" class="btn btn-primary js-scroll-trigger">Jump in!</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about-section text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-white mb-4">Welcome to generator page</h2>
+                    <p class="text-white-50">
+                        In this page your can view and use differents generators for your page. For help visit
+                        <a href="https://lbsinteractive.github.io/Zero/">Github</a>. Come on!.
+                    </p>
+                </div>
+            </div>
+            <img src="/site/site_config/external/grayscale/img/ipad.png" class="img-fluid" alt="" />
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section bg-light">
+        <div class="container">
+            <!-- Featured Project Row -->
+            <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                <div class="col-xl-8 col-lg-7">
+                    <center>
+                        <i class="fas fa-database fa-9x dataBaseColor" style="color:{{( dataBase.dataBaseColor.power ? dataBase.dataBaseColor.colorTrue : dataBase.dataBaseColor.colorFalse )}}"></i>
+                    </center>
+                </div>
+                <div class="col-xl-4 col-lg-2">
+                    <div class="featured-text text-center text-lg-left">
+                        <h4>Database</h4>
+                        <button type="button" ng-disabled="!dataBase.dataBaseColor.power" ng-click="$gui.testDB()" class="btn btn-outline-warning testDB dataBaseColor " ng-class="{hoverDB: (dataBase.dataBaseColor.power && !dataBase.execution.testDB), testDBhovered: dataBase.dataBaseColor.power && !dataBase.execution.testDB}">Test</button>
+                        <p class="text-black-50 mb-0">
+                            <div class="custom-control custom-switch">
+                                <input type="checkbox" ng-model="dataBase.mySQL.disabled"
+                                    class="custom-control-input" id="customSwitch1">
+                                <label class="custom-control-label" for="customSwitch1">MySQL</label>
+                            </div>
+                            <form>
+                                <div class="form-row align-items-center">
+                                    <div class="col-sm-6 my-1">
+                                        <label class="sr-only" for="inlineFormInputGroupHost">Host</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">/</div>
+                                            </div>
+                                            <input type="text" ng-model="dataBase.host.val" class="form-control" id="inlineFormInputGroupHost"
+                                                placeholder="Host">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 my-1">
+                                        <label class="sr-only" for="inlineFormInputGroupDbName">DB Name</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">-</div>
+                                            </div>
+                                            <input type="text" ng-model="dataBase.dbName.val" class="form-control" id="inlineFormInputGroupDbName"
+                                                placeholder="DB Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 my-1">
+                                        <label class="sr-only" for="inlineFormInputGroupUser">User</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">-</div>
+                                            </div>
+                                            <input type="text" ng-model="dataBase.user.val" class="form-control" id="inlineFormInputGroupUser"
+                                                placeholder="User">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 my-1">
+                                        <label class="sr-only" for="inlineFormInputGroupPassword">Password</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text">*</div>
+                                            </div>
+                                            <input type="text" ng-model="dataBase.password.val" class="form-control" id="inlineFormInputGroupPassword"
+                                                placeholder="Password">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project One Row -->
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="/site/site_config/external/grayscale/img/demo-image-01.jpg" alt="" />
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Misty</h4>
+                                <p class="mb-0 text-white-50">
+                                    An example of where you can put an image
+                                    of a project, or anything else, along
+                                    with a description.
+                                </p>
+                                <hr class="d-none d-lg-block mb-0 ml-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Two Row -->
+            <div class="row justify-content-center no-gutters">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="/site/site_config/external/grayscale/img/demo-image-02.jpg" alt="" />
+                </div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white">Mountains</h4>
+                                <p class="mb-0 text-white-50">
+                                    Another example of a project with its
+                                    respective description. These sections
+                                    work well responsively as well, try this
+                                    theme on a small screen!
+                                </p>
+                                <hr class="d-none d-lg-block mb-0 mr-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signup Section -->
+    <section id="signup" class="signup-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <!-- <i class="far fa-paper-plane fa-2x mb-2 text-white"></i> -->
+                    <!-- <h2 class="text-white mb-5">
+                        Contact Team!
+                    </h2> -->
+
+                    <!-- <form class="form-inline d-flex">
+                        <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail"
+                            placeholder="Enter email address..." />
+                        <button type="submit" class="btn btn-primary mx-auto">
+                            Subscribe
+                        </button>
+                    </form> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Address</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50">
+                                COLOMBIA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50">
+                                <a href="mailto:lbsinteractive.official@gmail.com">lbsinteractive.official@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <hr class="my-4" />
+                            <div class="small text-black-50">
+                                +57 (313) 369-0682
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social d-flex justify-content-center">
+                <a href="https://lbsinteractive.github.io/Zero/" class="mx-2">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black small text-center text-white-50">
+        <div class="container">
+            Copyright &copy; ZERO PROJECT 2020
+        </div>
+    </footer>
+
+
+    <!-- UI -->
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- UI -->
+
+    <!-- JS UI External -->
+    <script src="/site/site_config/external/grayscale/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/site/site_config/external/grayscale/js/grayscale.min.js"></script>
+    <!-- JS UI External -->
+
+</body>
+
+</html>

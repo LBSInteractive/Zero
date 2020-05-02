@@ -1,0 +1,49 @@
+{
+    "name": "dependences",
+    "version": "1.0.1",
+    "description": "Dependecias del proyecto",
+    "keywords": [
+        "HTML5",
+        "CSS3",
+        "AngularJS",
+        "PHP",
+        "Apache",
+        "MySQL",
+        "Oracle",
+        "Bootstrap",
+        "JQuery",
+        "JS"
+    ],
+    "homepage": "https://lbsinteractive.github.io/Zero/",
+    "bugs": {
+        "url": "https://github.com/LBSInteractive/Zero/issues",
+        "email": "lbsinteractive.official@gmail.com"
+    },
+    "license": "MIT",
+    "author": "LBSinteractive <lbsinteractive.official@gmail.com>",
+    "main": "index.php",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LBSInteractive/Zero.git"
+    },
+    "scripts": {
+        "test": "echo 'Test Script..'"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.13.0",
+        "angular": "^1.7.2",
+        "angular-animate": "^1.7.4",
+        "angular-aria": "^1.7.4",
+        "angular-material": "^1.1.10",
+        "angular-messages": "^1.7.4",
+        "angular-sanitize": "^1.7.5",
+        "bootstrap": "^4.4.1",
+        "jquery": "^3.3.1",
+        "pdfmake": "^0.1.39",
+        "popper.js": "^1.14.4",
+        "socket.io": "^2.1.1"
+    },
+    "devDependencies": {
+        "eslint": "^6.8.0"
+    }
+}

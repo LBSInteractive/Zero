@@ -1,0 +1,11 @@
+root = true
+
+[*]
+charset = utf-8 # (Formato de lectura)
+end_of_line = lf # (cr 1 Linea con retorno de carro) (lf Nueva linea y luego retorno de carro)
+insert_final_newline = true # (Inserta nueva linea al final del archivo) Habilita si no usas Atom
+trim_trailing_whitespace = true # (Limpia espacios en blanco) Habilita si no usas Atom
+
+[*.{js,json,html}]
+indent_style = space
+indent_size = 4
