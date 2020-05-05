@@ -65,3 +65,7 @@ div .testDBhovered {
   border-radius: 4px;
   font-size: 13px;
 }
+
+#tooltipHidden {
+  display: none;
+}
