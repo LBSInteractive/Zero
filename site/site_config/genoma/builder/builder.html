@@ -103,17 +103,21 @@
             <div class="row align-items-center no-gutters mb-4 mb-lg-5">
                 <div class="col-xl-8 col-lg-7">
                     <center>
-                        <i class="fas fa-database fa-9x dataBaseColor" style="color:{{( dataBase.dataBaseColor.power ? dataBase.dataBaseColor.colorTrue : dataBase.dataBaseColor.colorFalse )}}"></i>
+                        <i class="fas fa-database fa-9x dataBaseColor"
+                            style="color:{{( dataBase.dataBaseColor.power ? dataBase.dataBaseColor.colorTrue : dataBase.dataBaseColor.colorFalse )}}"></i>
                     </center>
                 </div>
                 <div class="col-xl-4 col-lg-2">
                     <div class="featured-text text-center text-lg-left">
                         <h4>Database</h4>
-                        <button type="button" ng-disabled="!dataBase.dataBaseColor.power" ng-click="$gui.testDB()" class="btn btn-outline-warning testDB dataBaseColor " ng-class="{hoverDB: (dataBase.dataBaseColor.power && !dataBase.execution.testDB), testDBhovered: dataBase.dataBaseColor.power && !dataBase.execution.testDB}">Test</button>
+                        <button aria-describedby="tooltip" type="button" ng-disabled="!dataBase.dataBaseColor.power"
+                            ng-click="$gui.testDB()" class="btn btn-outline-warning testDB dataBaseColor" id="button"
+                            ng-class="{hoverDB: (dataBase.dataBaseColor.power && !dataBase.execution.testDB), testDBhovered: dataBase.dataBaseColor.power && !dataBase.execution.testDB}">Test</button>
+                        <div id="tooltip" role="tooltip">I'm a tooltip</div>
                         <p class="text-black-50 mb-0">
                             <div class="custom-control custom-switch">
-                                <input type="checkbox" ng-model="dataBase.mySQL.disabled"
-                                    class="custom-control-input" id="customSwitch1">
+                                <input type="checkbox" ng-model="dataBase.mySQL.disabled" class="custom-control-input"
+                                    id="customSwitch1">
                                 <label class="custom-control-label" for="customSwitch1">MySQL</label>
                             </div>
                             <form>
@@ -124,8 +128,8 @@
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text">/</div>
                                             </div>
-                                            <input type="text" ng-model="dataBase.host.val" class="form-control" id="inlineFormInputGroupHost"
-                                                placeholder="Host">
+                                            <input type="text" ng-model="dataBase.host.val" class="form-control"
+                                                id="inlineFormInputGroupHost" placeholder="Host">
                                         </div>
                                     </div>
                                     <div class="col-sm-6 my-1">
@@ -134,8 +138,8 @@
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text">-</div>
                                             </div>
-                                            <input type="text" ng-model="dataBase.dbName.val" class="form-control" id="inlineFormInputGroupDbName"
-                                                placeholder="DB Name">
+                                            <input type="text" ng-model="dataBase.dbName.val" class="form-control"
+                                                id="inlineFormInputGroupDbName" placeholder="DB Name">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 my-1">
@@ -144,8 +148,8 @@
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text">-</div>
                                             </div>
-                                            <input type="text" ng-model="dataBase.user.val" class="form-control" id="inlineFormInputGroupUser"
-                                                placeholder="User">
+                                            <input type="text" ng-model="dataBase.user.val" class="form-control"
+                                                id="inlineFormInputGroupUser" placeholder="User">
                                         </div>
                                     </div>
                                     <div class="col-sm-12 my-1">
@@ -154,8 +158,8 @@
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text">*</div>
                                             </div>
-                                            <input type="text" ng-model="dataBase.password.val" class="form-control" id="inlineFormInputGroupPassword"
-                                                placeholder="Password">
+                                            <input type="text" ng-model="dataBase.password.val" class="form-control"
+                                                id="inlineFormInputGroupPassword" placeholder="Password">
                                         </div>
                                     </div>
                                 </div>
@@ -296,12 +300,46 @@
 
     <!-- UI -->
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
     <!-- UI -->
 
     <!-- JS UI External -->
     <script src="/site/site_config/external/grayscale/vendor/jquery-easing/jquery.easing.min.js"></script>
     <script src="/site/site_config/external/grayscale/js/grayscale.min.js"></script>
     <!-- JS UI External -->
+
+    <script>
+        const button = document.querySelector('#button');
+        const tooltip = document.querySelector('#tooltip');
+
+        // Pass the button, the tooltip, and some options, and Popper will do the
+        // magic positioning for you:
+        Popper.createPopper(button, tooltip, {
+            placement: 'top',
+        });
+
+        function show() {
+            tooltip.setAttribute('data-show', '');
+        }
+
+        function hide() {
+            tooltip.removeAttribute('data-show');
+        }
+
+        const showEvents = ['mouseenter', 'focus'];
+        const hideEvents = ['mouseleave', 'blur'];
+
+        showEvents.forEach(event => {
+            button.addEventListener(event, show);
+        });
+
+        hideEvents.forEach(event => {
+            button.addEventListener(event, hide);
+        });
+
+    </script>
+
+
 
 </body>
 

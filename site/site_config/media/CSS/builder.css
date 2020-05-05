@@ -1,63 +1,67 @@
 .dataBaseColor {
-    transition-property: color;
-    transition-timing-function: ease-out;
-    transition-duration: 0.35s;
+  transition-property: color;
+  transition-timing-function: ease-out;
+  transition-duration: 0.35s;
 }
 
-
-@media (min-width: 1200px){
-    div .testDB {
-        padding: 0.5rem 0.5rem;
-        position: absolute;
-        left: 9.9rem;
-        top: 0rem;
-        font-size: 36.4%;
-    }
+@media (min-width: 1200px) {
+  div .testDB {
+    padding: 0.5rem 0.5rem;
+    position: absolute;
+    left: 9.9rem;
+    top: 0rem;
+    font-size: 36.4%;
+  }
 }
 
-
-@media (max-width: 1199px){
-    div .testDB {
-        margin: 1rem;
-        padding: 0.5rem 0.5rem;
-        font-size: 70%;
-        /* position: absolute;
+@media (max-width: 1199px) {
+  div .testDB {
+    margin: 1rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 70%;
+    /* position: absolute;
         left: 9.9rem;
         top: 0rem; */
-
-    }
+  }
 }
 
-
-@media (max-width: 1199px){
-    div .testDB {
-        margin: 1rem;
-        padding: 0.5rem 0.5rem;
-        font-size: 70%;
-        /* position: absolute;
+@media (max-width: 1199px) {
+  div .testDB {
+    margin: 1rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 70%;
+    /* position: absolute;
         left: 9.9rem;
         top: 0rem; */
-
-    }
+  }
 }
-
 
 div .testDBhovered {
-    color: #212529;
-    background-color: #ffc107 !important;
-    border-color: #ffc107 !important;
+  color: #212529;
+  background-color: #ffc107 !important;
+  border-color: #ffc107 !important;
 }
-
 
 .hoverDB {
-    border-radius: 0rem;
-    animation-name: hovered;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+  border-radius: 0rem;
+  animation-name: hovered;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
-
 @keyframes hovered {
-  from {border-radius:0rem;}
-  to {border-radius:1rem;}
+  from {
+    border-radius: 0rem;
+  }
+  to {
+    border-radius: 1rem;
+  }
+}
+
+#tooltip {
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 13px;
 }
