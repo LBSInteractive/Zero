@@ -69,3 +69,9 @@ div .testDBhovered {
 #tooltipHidden {
   display: none;
 }
+
+.btn-secondary.disabled {
+
+  background-color: #cfcfcf;
+
+}
