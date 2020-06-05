@@ -1,17 +1,4 @@
-2020-06-01 02:20PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 
-2020-06-01 02:20PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 
-2020-06-01 02:20PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 
-2020-06-01 02:21PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 
-2020-06-01 02:21PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 
-2020-06-01 03:06PM [ERROR] Access denied for user 'root'@'localhost' (using password: NO)
-2020-06-01 03:07PM [ERROR] Access denied for user 'root'@'localhost' (using password: NO)
-2020-06-01 03:07PM [ERROR] Archivo builder.conf no encontrado
-2020-06-01 03:07PM [ERROR] Access denied for user 'rooter'@'localhost' (using password: YES)
-2020-06-01 03:08PM [ERROR] Access denied for user 'rooter'@'localhost' (using password: YES)
-2020-06-01 03:08PM [ERROR] Access denied for user 'rooter'@'localhost' (using password: YES)
-2020-06-01 03:09PM [ERROR] Access denied for user 'rooter'@'localhost' (using password: YES)
-2020-06-01 03:09PM [ERROR] Access denied for user 'rooter'@'localhost' (using password: YES)
-2020-06-01 03:09PM [ERROR] Access denied for user 'rooter'@'localhost' (using password: YES)
-2020-06-01 03:09PM [ERROR] Access denied for user 'rooter'@'localhost' (using password: YES)
-2020-06-01 03:09PM [ERROR] Access denied for user 'rooter'@'localhost' (using password: YES)
-2020-06-01 03:09PM [ERROR] Access denied for user 'root'@'localhost' (using password: NO)
+
+2020-06-05 11:41AM [ERROR] Unknown database '3306'
+2020-06-05 11:43AM [ERROR] Access denied for user 'mydbroot'@'localhost' (using password: YES)
+2020-06-05 11:43AM [ERROR] Access denied for user 'mydbroot'@'localhost' (using password: YES)
