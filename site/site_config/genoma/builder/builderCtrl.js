@@ -61,10 +61,10 @@ core.controller('control', function ($scope, $timeout, $rootScope, $http) {
             let data=[$scope.dataBase.host.val,$scope.dataBase.dbName.val, $scope.dataBase.user.val, $scope.dataBase.password.val];
             $http.post(url, data)
             .then(function (data, status, headers, config) { 
-                console.log("success1", data); 
+                console.log( status); 
             })
             .catch(function(error) {
-                console.log('LoginService.login:error', error);
+                console.log(error);
             });
         
         }
