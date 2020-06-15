@@ -40,7 +40,13 @@ core.controller('control', function ($scope, $timeout, $rootScope, $http) {
         execution: {
             testDB: false
         }
+               
+
+        
     };
+    
+
+
     /*----------------------------   scope Global   ----------------------------*/
     $rootScope.variable = "variable global"
     //****************************************************************************
@@ -51,7 +57,18 @@ core.controller('control', function ($scope, $timeout, $rootScope, $http) {
     $scope.$gui = {
         testDB: function () {
             $scope.dataBase.execution.testDB = true;
+            const url='\site\site_config\genoma\builder\testDB.php';
+            let data=[$scope.dataBase.host.val,$scope.dataBase.dbName.val, $scope.dataBase.user.val, $scope.dataBase.password.val];
+            $http.post(url, data)
+            .then(function (data, status, headers, config) { 
+                console.log("success1", data); 
+            })
+            .catch(function(error) {
+                console.log('LoginService.login:error', error);
+            });
+        
         }
+
     };
     //****************************************************************************
 
