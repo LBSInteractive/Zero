@@ -21,30 +21,38 @@ core.controller('control', function ($scope, $timeout, $rootScope, $http) {
             disabled: false
         },
         dataBaseColor: {
-            colorFalse: "#000000",
-            colorTrue: "#1b7575",
             power: false
         },
         host: {
-            val: ''
+            val: '',
+            disabled: false
         },
         dbName: {
-            val: ''
+            val: '',
+            disabled: false
         },
         user: {
-            val: ''
+            val: '',
+            disabled: false
         },
         password: {
-            val: ''
+            val: '',
+            disabled: false
         },
         execution: {
             testDB: false
         }
-               
-
-        
     };
-    
+
+    $scope.$view = {
+        title: 'Team'
+    };
+
+    $scope.$style = {
+        sucessColor: {
+            color: '#161616'
+        }
+    };
 
 
     /*----------------------------   scope Global   ----------------------------*/
@@ -57,16 +65,36 @@ core.controller('control', function ($scope, $timeout, $rootScope, $http) {
     $scope.$gui = {
         testDB: function () {
             $scope.dataBase.execution.testDB = true;
-            const url='\site\site_config\genoma\builder\testDB.php';
-            let data=[$scope.dataBase.host.val,$scope.dataBase.dbName.val, $scope.dataBase.user.val, $scope.dataBase.password.val];
-            $http.post(url, data)
-            .then(function (data, status, headers, config) { 
-                console.log( status); 
-            })
-            .catch(function(error) {
-                console.log(error);
-            });
-        
+            let url = '/site/site_config/genoma/builder/testDB.php';
+            let data = {
+                host: $scope.dataBase.host.val,
+                dbName: $scope.dataBase.dbName.val,
+                user: $scope.dataBase.user.val,
+                password: btoa($scope.dataBase.password.val)
+            };
+            let config = {
+                headers: {
+                    'Content-Type': undefined
+                }
+            };
+            $http.post(url, data, config).then(function (success) {
+
+                $scope.$view.title = success.data.msg;
+                $scope.dataBase.host.disabled = true;
+                $scope.dataBase.dbName.disabled = true;
+                $scope.dataBase.user.disabled = true;
+                $scope.dataBase.password.disabled = true;
+                $scope.dataBase.execution.testDB = true;
+                $scope.$style.sucessColor.color = '#1b7575';
+
+            }, function (error) {
+
+                $scope.$view.title = error.data.msg;
+                $scope.$style.sucessColor.color = '#dc3545';
+                $scope.dataBase.execution.testDB = false;
+
+            }
+            );
         }
 
     };

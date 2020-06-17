@@ -1,4 +1,8 @@
-
-2020-06-05 11:41AM [ERROR] Unknown database '3306'
-2020-06-05 11:43AM [ERROR] Access denied for user 'mydbroot'@'localhost' (using password: YES)
-2020-06-05 11:43AM [ERROR] Access denied for user 'mydbroot'@'localhost' (using password: YES)
+2020-06-17 01:42PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 
+2020-06-17 01:48PM [ERROR] Access denied for user 'root'@'localhost' (using password: YES)
+2020-06-17 01:48PM [ERROR] Access denied for user 'root'@'localhost' (using password: YES)
+2020-06-17 02:11PM [ERROR] Access denied for user 'root'@'localhost' (using password: YES)
+2020-06-17 02:24PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 
+2020-06-17 02:24PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 
+2020-06-17 02:25PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 
+2020-06-17 02:27PM [ERROR] php_network_getaddresses: getaddrinfo failed: No such host is known. 

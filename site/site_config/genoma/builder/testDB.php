@@ -3,8 +3,11 @@ header('Content-type: application/json; charset=utf-8');
 date_default_timezone_set("America/Bogota");
 error_reporting(0);
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-if (!empty($_POST)) {
+    if(empty($_POST)){
+        $_POST = json_decode(file_get_contents('php://input'), true);
+    }
 
     if (isset($_POST["host"]) && isset($_POST["dbName"]) && isset($_POST["user"]) && isset($_POST["password"])) {
 
