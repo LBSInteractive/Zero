@@ -1,4 +1,4 @@
-/*************************************************************************************************
+x/*************************************************************************************************
  **				                        Modulo Controller		                         		**
  *************************************************************************************************/
 
@@ -17,9 +17,6 @@ core.controller('control', function ($scope, $timeout, $rootScope, $http) {
     //****************************************************************************
     /*---------------------------- scope controller ----------------------------*/
     $scope.dataBase = {
-        mySQL: {
-            disabled: false
-        },
         dataBaseColor: {
             power: false
         },
@@ -84,7 +81,7 @@ core.controller('control', function ($scope, $timeout, $rootScope, $http) {
                 $scope.dataBase.dbName.disabled = true;
                 $scope.dataBase.user.disabled = true;
                 $scope.dataBase.password.disabled = true;
-                $scope.dataBase.execution.testDB = true;
+                $scope.dataBase.execution.testDB = false;
                 $scope.$style.sucessColor.color = '#1b7575';
 
             }, function (error) {
@@ -104,8 +101,8 @@ core.controller('control', function ($scope, $timeout, $rootScope, $http) {
 
     //****************************************************************************
     /*----------------------------     Watchers     ----------------------------*/
-    $scope.$watchGroup(['dataBase.mySQL.disabled', 'dataBase.oracle.disabled', 'dataBase.host.val', 'dataBase.dbName.val', 'dataBase.user.val', 'dataBase.password.val'], function (newValue, oldValue, scope) {
-        $scope.dataBase.dataBaseColor.power = ($scope.dataBase.mySQL.disabled && $scope.dataBase.host.val != '' && $scope.dataBase.dbName.val != '' && $scope.dataBase.user.val != '' && $scope.dataBase.password.val != '') ? true : false;
+    $scope.$watchGroup(['dataBase.oracle.disabled', 'dataBase.host.val', 'dataBase.dbName.val', 'dataBase.user.val', 'dataBase.password.val'], function (newValue, oldValue, scope) {
+        $scope.dataBase.dataBaseColor.power = ($scope.dataBase.host.val != '' && $scope.dataBase.dbName.val != '' && $scope.dataBase.user.val != '' && $scope.dataBase.password.val != '') ? true : false;
     });
 
     //****************************************************************************

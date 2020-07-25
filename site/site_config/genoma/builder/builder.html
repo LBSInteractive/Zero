@@ -103,66 +103,74 @@
             <div class="row align-items-center no-gutters mb-4 mb-lg-5">
                 <div class="col-xl-8 col-lg-7">
                     <center>
-                        <i class="fas fa-database fa-9x dataBaseColor"
-                            ng-style="$style.sucessColor"></i>
+                        <i class="fas fa-database fa-9x dataBaseColor" ng-style="$style.sucessColor"></i>
                     </center>
                 </div>
                 <div class="col-xl-4 col-lg-2">
                     <div class="featured-text text-center text-lg-left">
-                        <h4>Database</h4>
-                        <button aria-describedby="tooltip" type="button" ng-disabled="dataBase.execution.testDB"
-                            ng-click="$gui.testDB()" class="btn btn-outline-warning testDB dataBaseColor" id="button"
-                            ng-class="{hoverDB: (dataBase.dataBaseColor.power && !dataBase.execution.testDB), testDBhovered: dataBase.dataBaseColor.power && !dataBase.execution.testDB}">Test</button>
-                        <p class="text-black-50 mb-0">
-                            <div class="custom-control custom-switch">
-                                <input ng-disabled="dataBase.host.disabled" type="checkbox" ng-model="dataBase.mySQL.disabled" class="custom-control-input"
-                                    id="customSwitch1">
-                                <label class="custom-control-label" for="customSwitch1">MySQL</label>
+                        <div class="row">
+                            <div class="col-xl-2">
+                                <h4>Database</h4>
+                                <button aria-describedby="tooltip" type="button" ng-disabled="dataBase.execution.testDB"
+                                    ng-click="$gui.testDB()" class="btn btn-outline-warning testDB dataBaseColor"
+                                    id="button"
+                                    ng-class="{hoverDB: (dataBase.dataBaseColor.power && !dataBase.execution.testDB), testDBhovered: dataBase.dataBaseColor.power && !dataBase.execution.testDB}">Test</button>
                             </div>
-                            <form>
-                                <div class="form-row align-items-center">
-                                    <div class="col-sm-6 my-1">
-                                        <label class="sr-only" for="inlineFormInputGroupHost">Host</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">/</div>
-                                            </div>
-                                            <input ng-disabled="dataBase.host.disabled" type="text" ng-model="dataBase.host.val" class="form-control"
-                                                id="inlineFormInputGroupHost" placeholder="Host">
+                            <div class="col-xl-4">
+                                <button aria-describedby="tooltip" type="button" ng-disabled="dataBase.execution.testDB" ng-click="$gui.testDB()"
+                                    class="btn btn-outline-warning testDB dataBaseColor" id="button"
+                                    ng-class="{hoverDB: (dataBase.dataBaseColor.power && !dataBase.execution.testDB), testDBhovered: dataBase.dataBaseColor.power && !dataBase.execution.testDB}">Generate</button>
+                            </div>
+                        </div>
+                        <p class="text-black-50 mb-0">
+                        <form>
+                            <div class="form-row align-items-center">
+                                <div class="col-sm-6 my-1">
+                                    <label class="sr-only" for="inlineFormInputGroupHost">Host</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">/</div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6 my-1">
-                                        <label class="sr-only" for="inlineFormInputGroupDbName">DB Name</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">-</div>
-                                            </div>
-                                            <input ng-disabled="dataBase.dbName.disabled" type="text" ng-model="dataBase.dbName.val" class="form-control"
-                                                id="inlineFormInputGroupDbName" placeholder="DB Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 my-1">
-                                        <label class="sr-only" for="inlineFormInputGroupUser">User</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">-</div>
-                                            </div>
-                                            <input ng-disabled="dataBase.user.disabled" type="text" ng-model="dataBase.user.val" class="form-control"
-                                                id="inlineFormInputGroupUser" placeholder="User">
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-12 my-1">
-                                        <label class="sr-only" for="inlineFormInputGroupPassword">Password</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text">*</div>
-                                            </div>
-                                            <input ng-disabled="dataBase.password.disabled" type="text" ng-model="dataBase.password.val" class="form-control"
-                                                id="inlineFormInputGroupPassword" placeholder="Password">
-                                        </div>
+                                        <input ng-disabled="dataBase.host.disabled" type="text"
+                                            ng-model="dataBase.host.val" class="form-control"
+                                            id="inlineFormInputGroupHost" placeholder="Host">
                                     </div>
                                 </div>
-                            </form>
+                                <div class="col-sm-6 my-1">
+                                    <label class="sr-only" for="inlineFormInputGroupDbName">DB Name</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">-</div>
+                                        </div>
+                                        <input ng-disabled="dataBase.dbName.disabled" type="text"
+                                            ng-model="dataBase.dbName.val" class="form-control"
+                                            id="inlineFormInputGroupDbName" placeholder="DB Name">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 my-1">
+                                    <label class="sr-only" for="inlineFormInputGroupUser">User</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">-</div>
+                                        </div>
+                                        <input ng-disabled="dataBase.user.disabled" type="text"
+                                            ng-model="dataBase.user.val" class="form-control"
+                                            id="inlineFormInputGroupUser" placeholder="User">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 my-1">
+                                    <label class="sr-only" for="inlineFormInputGroupPassword">Password</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <div class="input-group-text">*</div>
+                                        </div>
+                                        <input ng-disabled="dataBase.password.disabled" type="text"
+                                            ng-model="dataBase.password.val" class="form-control"
+                                            id="inlineFormInputGroupPassword" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                         </p>
                     </div>
                 </div>

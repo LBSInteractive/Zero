@@ -39,7 +39,7 @@
         "angular-messages": "^1.7.4",
         "angular-sanitize": "^1.7.5",
         "bootstrap": "^4.4.1",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.1",
         "pdfmake": "^0.1.39",
         "popper.js": "^1.14.4",
         "socket.io": "^2.1.1"
